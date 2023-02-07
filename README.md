@@ -12,12 +12,13 @@ For example, say I want a challange raiting on 10 rolled.
 THe following computations must occur:
 1. a challange raiting on 10 is inputed and a random int 1-100 is rolled. 
 2. Based on the result of the d100 we will deside our roll values. Lets say we rolled 35.
-3. 
+3. Apply the following logic and store results 
   a. 2d6 X 100  copper coins will be generated
   b. 2d6 X 1000 silver coins will be generated
   c. 6d6 X 100  gold coins will be generated
   d. 3d6 x 10   platinum coins will be generated. 
   e. 3d6 of 50 gp value gems will be generated 
   f. 1d6 roles on Magic Item Table A will be selected. 
-  
+ 4. For currency and gem||art generation, a direct cout is applied.
+ 5. For magic items, which are saved in a vector, iterate the vector and cout the looted magic items.
   
