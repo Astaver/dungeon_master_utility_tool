@@ -12,9 +12,11 @@
 using namespace std;
 
 
+
 void magic_table(vector<string>& items, char table, int items_from_table)
 {
     
+    //these string arrays hold the various magic items sorted by magic table
     
     string magic_table_A[8] = { "potion of healing", "spell scroll(cantrip)", "potion of climbing", "spell scroll(1st level)", "spell scroll (2nd level)", "potion of greater healing", "bag of holding", "driftglobe"};
     
@@ -36,6 +38,8 @@ void magic_table(vector<string>& items, char table, int items_from_table)
     //37 with sub table of 7 items
     string magic_table_I[52] = {"defender", "hammer of thunderbolts", "luck blade", "sword of answering", "holy avenger", "ring of djinni summoning", "ring of invisibility", "ring of spell turning", "rod of lordly might", "vorpal sword", "belt of cloud giant strength", "armor, +2 breastplate", "armor, +3 chain mail", "armor, +3 chain shirt", "cloak of invisibility", "crystal ball (legendary version)", "armor, +1 half plate", "iron flask", "armor, +3 leather", "armor, +1 plate", "robe of the archmagi", "rod of resurrection", "armor, +1 scale mail", "scarab of protection", "armor, +2 splint", "armor, +2 studded leather", "well of many worlds", "***magic armor roll***", "apparatus of kwalish", "armor of invulnerability", "belt of storm giant strength", "cubic gate", "deck of many things", "efreeti chain", "armor of resistance (half plate)", "horn of valhalla (iron)", "instrument of the bards (ollamh harp)", "loun stone (greater absorption)", "loun stone (master)", "loun stone (regeneration)", "plate armor of etherealness", "plate armor of resistance", "ring of air elemental command", "ring of earth elemental command", "ring of fire elemental command", "ring of three wishes", "ring of water elemental command", "sphere of annihilation", "talisman of pure good", "talisman of the sphere", "talisman of ultimate evil", "tome of the stilled tongue" };
 
+    
+    //depending on the char assigned to table, we will roll and push whichever index item to vector items.
         
     switch (table) {
         case 'a':
@@ -101,11 +105,14 @@ void magic_table(vector<string>& items, char table, int items_from_table)
 }
 
 
+
 void magic_table_logic(vector<string> items ,int times, int type, char table_1, int times_2, int type_2, char table_2)
 {
     int items_from_table = 0;
     srand(time(0));
-     
+    
+    //we run the following chunks of code twice. In the dnd loot generation the most different magic item tables we will roll is 2. So we need to check and calculate each table.
+    
     for (int i = 0; i < times; ++i) {
         int r = rand() % type + 1;
         items_from_table += r; //this is the number of items we will get from respective table.
@@ -123,7 +130,4 @@ void magic_table_logic(vector<string> items ,int times, int type, char table_1, 
     for (int i = 0; i < items.size(); ++i) {
         cout << "-" << items[i] << endl;
     }
- 
-    cout << "we got here\n\n";
-
 }

@@ -16,6 +16,10 @@
 using namespace std;
 
 
+/*
+ this file loades my values into my vectors to sort and pull from them later in other files.
+ */
+
 vector<Hoard_Loot> load_loot_variables(vector<Hoard_Loot>& hoard_loot_4, vector<Hoard_Loot>& hoard_loot_10, vector<Hoard_Loot>& hoard_loot_16, vector<Hoard_Loot>& hoard_loot_17)
 {
     //challange 4

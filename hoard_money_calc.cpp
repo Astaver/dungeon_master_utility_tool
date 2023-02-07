@@ -10,6 +10,11 @@
 #include <iostream>
 
 
+/*
+ streamlines my money calculation
+ */
+
+
 int money_calc(int raiting)
 {
    // srand(time_t(0));

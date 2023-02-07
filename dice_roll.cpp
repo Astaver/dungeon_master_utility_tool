@@ -9,6 +9,11 @@
 
 using namespace std;
 
+/*
+ handles all logic for standard *non loot related* dice roles.
+ */
+
+
 void dice_roll()
 {
     char _command = '\0';

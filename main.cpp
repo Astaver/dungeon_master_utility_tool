@@ -12,12 +12,14 @@ char get_char(string prompt);
 
 int main()
 {
+    //vectors of type Hoard_Loot to handle each challange raiting range
     vector<Hoard_Loot> hoard_loot_4;
     vector<Hoard_Loot> hoard_loot_10;
     vector<Hoard_Loot> hoard_loot_16;
     vector<Hoard_Loot> hoard_loot_17;
     load_loot_variables(hoard_loot_4, hoard_loot_10, hoard_loot_16, hoard_loot_17);
     
+    //ensures true random values
     srand(time(0));
     
     cout << "Dungeon Master Utility Tool" << endl << endl;
@@ -72,7 +74,7 @@ void display_menu()
 
 
 
-
+//pass by refrence our vectors
 void loot_roll(vector<Hoard_Loot>& hoard_loot_4, vector<Hoard_Loot>& hoard_loot_10,vector<Hoard_Loot>& hoard_loot_16, vector<Hoard_Loot>& hoard_loot_17)
 {
     char _command = '\0';
@@ -102,7 +104,7 @@ void loot_roll(vector<Hoard_Loot>& hoard_loot_4, vector<Hoard_Loot>& hoard_loot_
 
 
 
-
+//calculates gem gold piece value based on which gem_value is passed.
 void gem_table(int gem_value,int gem_dice_to_roll)
 {
     srand(time_t(0));
@@ -129,6 +131,7 @@ void gem_table(int gem_value,int gem_dice_to_roll)
     
 }
 
+//calculates art gold piece value based on which gem_value is passed.
 void art_table(int art_value, int art_dice_to_roll)
 {
     srand(time(0));

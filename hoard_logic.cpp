@@ -21,8 +21,11 @@ void treasure_hoard_logic(vector<Hoard_Loot>& hoard_loot_4, vector<Hoard_Loot>& 
     srand(time(0));
     cout << "Please enter challange raiting: ";
     cin >> raiting;
+    
+    //calculates money based on raiting
     money_calc(raiting);
     
+    //streamlines the ranges of the raiting
     if (raiting >= 1 && raiting <= 4) { x = 4;}
     if (raiting >= 5 && raiting <= 10) {x = 10;}
     if (raiting >= 11 && raiting <= 16) {x = 16;}
@@ -31,6 +34,8 @@ void treasure_hoard_logic(vector<Hoard_Loot>& hoard_loot_4, vector<Hoard_Loot>& 
     switch (x) {
         case 4:
             d100 = rand() % 100 + 1;
+            
+            //streamline the ranges of the d100 results and assign to adj
             if      (d100 >= 1 && d100 <= 6) {adj = 6;}
             else if (d100 >= 7 && d100 <= 16) {adj = 16;}
             else if (d100 >= 17 && d100 <= 26) {adj = 26;}
@@ -49,11 +54,14 @@ void treasure_hoard_logic(vector<Hoard_Loot>& hoard_loot_4, vector<Hoard_Loot>& 
             else if (d100 >= 98 && d100 <= 99) {adj = 99;}
             else {adj = 100;}
             
+            
+        
             for (int i = 0; i < hoard_loot_4.size(); ++i)
             {
-            
+                //when adj == the key value
                 if (hoard_loot_4[i].key_value == adj)
                 {
+                    //find if we need gems or art
                     string s = hoard_loot_4[i].descriptor;
                     if (s == " gems")
                     {
@@ -64,6 +72,7 @@ void treasure_hoard_logic(vector<Hoard_Loot>& hoard_loot_4, vector<Hoard_Loot>& 
                         art_table(hoard_loot_4[i].object_rolls, hoard_loot_4[i].type_to_roll);
                     }
                     
+                    //pass respective values of the hoard_loot_n struct to magic_table_logic
                     magic_table_logic(items, hoard_loot_4[i].item_a.magic_rolls, hoard_loot_4[i].item_a.type_to_roll_2, hoard_loot_4[i].item_a.table, hoard_loot_4[i].item_b.magic_rolls_2, hoard_loot_4[i].item_b.type_to_roll_3, hoard_loot_4[i].item_b.table_2);
 
                   //  break;

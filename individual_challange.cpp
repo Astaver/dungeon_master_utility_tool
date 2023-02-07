@@ -14,6 +14,13 @@
 using namespace std;
 
 
+/*
+ this entire file handles the smaller quantities of loot rolled for an individual player. This is an edge case in DND, and in many ways was used to get a handle on the logic. 
+ 
+ 
+ */
+
+
 struct X_Dice_Var
 {
     int to_roll_2 = 0;
