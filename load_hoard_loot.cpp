@@ -20,6 +20,139 @@ using namespace std;
  this file loades my values into my vectors to sort and pull from them later in other files.
  */
 
+
+
+//range handling of d100 and raiting for hoard loot generation
+int hoard_handling(int& raiting, int& d100){
+    //streamlines the ranges of the raiting
+    if (raiting >= 1 && raiting <= 4) { raiting = 4;}
+    if (raiting >= 5 && raiting <= 10) { raiting = 10;}
+    if (raiting >= 11 && raiting <= 16) { raiting = 16;}
+    if (raiting >= 17 && raiting <= 20) { raiting = 17;}
+    
+    
+    switch (raiting) {
+        case 4:
+            //streamline the ranges of the d100 results and assign to adj
+            if      (d100 >= 1 && d100 <= 6)   {d100 = 6;}
+            else if (d100 >= 7 && d100 <= 16)  {d100 = 16;}
+            else if (d100 >= 17 && d100 <= 26) {d100 = 26;}
+            else if (d100 >= 27 && d100 <= 36) {d100 = 36;}
+            else if (d100 >= 37 && d100 <= 44) {d100 = 44;}
+            else if (d100 >= 45 && d100 <= 52) {d100 = 52;}
+            else if (d100 >= 53 && d100 <= 60) {d100 = 60;}
+            else if (d100 >= 61 && d100 <= 65) {d100 = 65;}
+            else if (d100 >= 66 && d100 <= 70) {d100 = 70;}
+            else if (d100 >= 71 && d100 <= 75) {d100 = 75;}
+            else if (d100 >= 76 && d100 <= 78) {d100 = 78;}
+            else if (d100 >= 79 && d100 <= 80) {d100 = 80;}
+            else if (d100 >= 81 && d100 <= 85) {d100 = 85;}
+            else if (d100 >= 86 && d100 <= 92) {d100 = 92;}
+            else if (d100 >= 93 && d100 <= 97) {d100 = 97;}
+            else if (d100 >= 98 && d100 <= 99) {d100 = 99;}
+            else    {d100 = 100;}
+            break;
+        case 10:
+            if      (d100 >= 1 && d100 <= 4)   {d100 = 4;}
+            else if (d100 >= 5 && d100 <= 10)  {d100 = 10;}
+            else if (d100 >= 11 && d100 <= 16) {d100 = 16;}
+            else if (d100 >= 17 && d100 <= 22) {d100 = 22;}
+            else if (d100 >= 23 && d100 <= 28) {d100 = 28;}
+            else if (d100 >= 29 && d100 <= 32) {d100 = 32;}
+            else if (d100 >= 33 && d100 <= 36) {d100 = 36;}
+            else if (d100 >= 37 && d100 <= 40) {d100 = 40;}
+            else if (d100 >= 41 && d100 <= 44) {d100 = 44;}
+            else if (d100 >= 45 && d100 <= 49) {d100 = 49;}
+            else if (d100 >= 50 && d100 <= 54) {d100 = 54;}
+            else if (d100 >= 55 && d100 <= 59) {d100 = 59;}
+            else if (d100 >= 60 && d100 <= 63) {d100 = 63;}
+            else if (d100 >= 64 && d100 <= 66) {d100 = 66;}
+            else if (d100 >= 67 && d100 <= 69) {d100 = 69;}
+            else if (d100 >= 70 && d100 <= 72) {d100 = 72;}
+            else if (d100 >= 73 && d100 <= 74) {d100 = 74;}
+            else if (d100 >= 75 && d100 <= 76) {d100 = 76;}
+            else if (d100 >= 77 && d100 <= 78) {d100 = 78;}
+            else if (d100 == 79) {d100 = 79;}
+            else if (d100 == 80) {d100 = 80;}
+            else if (d100 >= 81 && d100 <= 84) {d100 = 84;}
+            else if (d100 >= 85 && d100 <= 88) {d100 = 88;}
+            else if (d100 >= 89 && d100 <= 91) {d100 = 91;}
+            else if (d100 >= 92 && d100 <= 94) {d100 = 94;}
+            else if (d100 >= 95 && d100 <= 96) {d100 = 96;}
+            else if (d100 >= 97 && d100 <= 98) {d100 = 98;}
+            else if (d100 == 99) {d100 = 99;}
+            else    {d100 = 100;}
+            break;
+        case 16:
+            if      (d100 >= 1 && d100 <= 3)    {d100 = 3;}
+            else if (d100 >= 4 && d100 <= 6)    {d100 = 6;}
+            else if (d100 >= 7 && d100 <= 10)   {d100 = 10;}
+            else if (d100 >= 11 && d100 <= 12)  {d100 = 12;}
+            else if (d100 >= 13 && d100 <= 15)  {d100 = 15;}
+            else if (d100 >= 16 && d100 <= 19)  {d100 = 19;}
+            else if (d100 >= 20 && d100 <= 23)  {d100 = 23;}
+            else if (d100 >= 24 && d100 <= 26)  {d100 = 26;}
+            else if (d100 >= 27 && d100 <= 29)  {d100 = 29;}
+            else if (d100 >= 30 && d100 <= 35)  {d100 = 35;}
+            else if (d100 >= 36 && d100 <= 40)  {d100 = 40;}
+            else if (d100 >= 41 && d100 <= 45)  {d100 = 45;}
+            else if (d100 >= 46 && d100 <= 50)  {d100 = 50;}
+            else if (d100 >= 51 && d100 <= 54)  {d100 = 54;}
+            else if (d100 >= 55 && d100 <= 58)  {d100 = 58;}
+            else if (d100 >= 59 && d100 <= 62)  {d100 = 62;}
+            else if (d100 >= 63 && d100 <= 66)  {d100 = 66;}
+            else if (d100 >= 67 && d100 <= 68)  {d100 = 68;}
+            else if (d100 >= 69 && d100 <= 70)  {d100 = 70;}
+            else if (d100 >= 71 && d100 <= 72)  {d100 = 72;}
+            else if (d100 >= 73 && d100 <= 74)  {d100 = 74;}
+            else if (d100 >= 75 && d100 <= 76)  {d100 = 76;}
+            else if (d100 >= 77 && d100 <= 78)  {d100 = 78;}
+            else if (d100 >= 79 && d100 <= 80)  {d100 = 80;}
+            else if (d100 >= 81 && d100 <= 82)  {d100 = 82;}
+            else if (d100 >= 83 && d100 <= 85)  {d100 = 85;}
+            else if (d100 >= 86 && d100 <= 88)  {d100 = 88;}
+            else if (d100 >= 89 && d100 <= 90)  {d100 = 90;}
+            else if (d100 >= 91 && d100 <= 92)  {d100 = 92;}
+            else if (d100 >= 93 && d100 <= 94)  {d100 = 94;}
+            else if (d100 >= 95 && d100 <= 96)  {d100 = 96;}
+            else if (d100 >= 97 && d100 <= 98)  {d100 = 98;}
+            else if (d100 >= 99 && d100 <= 100) {d100 = 100;}
+            break;
+        case 17:
+            if      (d100 >= 1 && d100 <= 2)   {d100 = 2;}
+            else if (d100 >= 3 && d100 <= 5)   {d100 = 5;}
+            else if (d100 >= 6 && d100 <= 8)   {d100 = 8;}
+            else if (d100 >= 9 && d100 <= 11)  {d100 = 11;}
+            else if (d100 >= 12 && d100 <= 14) {d100 = 14;}
+            else if (d100 >= 15 && d100 <= 22) {d100 = 22;}
+            else if (d100 >= 23 && d100 <= 30) {d100 = 30;}
+            else if (d100 >= 31 && d100 <= 38) {d100 = 38;}
+            else if (d100 >= 39 && d100 <= 46) {d100 = 46;}
+            else if (d100 >= 47 && d100 <= 52) {d100 = 52;}
+            else if (d100 >= 53 && d100 <= 58) {d100 = 58;}
+            else if (d100 >= 59 && d100 <= 63) {d100 = 63;}
+            else if (d100 >= 64 && d100 <= 68) {d100 = 68;}
+            else if (d100 == 69) {d100 = 69;}
+            else if (d100 == 70) {d100 = 70;}
+            else if (d100 == 71) {d100 = 71;}
+            else if (d100 == 72) {d100 = 72;}
+            else if (d100 >= 73 && d100 <= 74) {d100 = 74;}
+            else if (d100 >= 75 && d100 <= 76) {d100 = 76;}
+            else if (d100 >= 77 && d100 <= 78) {d100 = 78;}
+            else if (d100 >= 79 && d100 <= 80) {d100 = 80;}
+            else if (d100 >= 81 && d100 <= 85) {d100 = 85;}
+            else if (d100 >= 86 && d100 <= 90) {d100 = 90;}
+            else if (d100 >= 91 && d100 <= 95) {d100 = 95;}
+            else if (d100 >= 96 && d100 <= 100) {d100 = 100;}
+            break;
+        default:
+            break;
+    }
+    return d100;
+}
+
+
+
 vector<Hoard_Loot> load_loot_variables(vector<Hoard_Loot>& hoard_loot_4, vector<Hoard_Loot>& hoard_loot_10, vector<Hoard_Loot>& hoard_loot_16, vector<Hoard_Loot>& hoard_loot_17)
 {
     //challange 4

@@ -99,6 +99,6 @@ int money_calc(int raiting);
 void magic_table_logic(vector<string> items, int, int, char, int, int, char);
 
 int range_handling(int &raiting, int &d100);
-
+int hoard_handling(int& raiting, int& d100);
 
 #endif /* function_definitions_hpp */
