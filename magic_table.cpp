@@ -12,7 +12,6 @@
 using namespace std;
 
 
-
 void magic_table(vector<string>& items, char table, int items_from_table)
 {
     

@@ -13,7 +13,6 @@
 using namespace std;
 
 
-
 void Dice_Variable::set_int_values(int key_value, int to_roll, int type, int modifier, int to_roll_2, int type_2, int modifier_2){
     this->key_value = key_value;
     this->to_roll = to_roll;
@@ -119,6 +118,7 @@ string Dice_Variable::get_text_2() const {
 vector<Dice_Variable> load_dice_variables(vector<Dice_Variable>& var_4,vector<Dice_Variable>&   var_10, vector<Dice_Variable>&  var_16, vector<Dice_Variable>&  var_17)
 {
     Dice_Variable c4_30;
+    
     c4_30.set_int_values(30, 5, 6, 0, 0, 0, 0);
     c4_30.set_string_values(" copper", "");
     var_4.push_back(c4_30);
@@ -255,4 +255,41 @@ int range_handling(int &raiting, int &d100){
             break;
     }
     return d100;
+}
+
+
+
+void roll_handling(int raiting, int& d100, vector<Dice_Variable>& vec) {
+    
+    int temp = 0, temp2 = 0;
+    
+    for (int i = 0; i < vec.size(); ++i)
+    {
+        if (d100 == vec[i].get_key_value()) {
+            if (raiting == 4) {
+                for (int j = 0; j < vec[i].get_to_roll(); ++j) {
+                    temp += rand() % vec[i].get_type() + 1;
+                }
+                cout << "You looted " << temp << vec[i].get_text() << endl << endl;
+            }
+            else {
+                for (int i = 0; i < vec.size(); ++i) {
+                    if (d100 == vec[i].get_key_value()) {
+                        for (int j = 0; j < vec[i].get_to_roll(); ++j) {
+                            temp += rand() % vec[i].get_type() + 1;
+                        }
+                        temp *= vec[i].get_modifier();
+                        for (int k = 0; k < vec[i].get_to_roll_2(); ++k) {
+                            temp2 += rand() % vec[i].get_type_2() + 1;
+                        }
+                        temp2 *= vec[i].get_modifier_2();
+                        cout << "You looted " << temp << vec[i].get_text() << " and "
+                            << temp2 << vec[i].get_text_2() << endl << endl;
+                        }
+                    }
+                }
+            
+            }
+    }
+
 }

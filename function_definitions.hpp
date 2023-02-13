@@ -83,22 +83,24 @@ public:
 
 void display_menu();
 void dice_roll();
+
+//hoard_loot functions
 void loot_roll(vector<Hoard_Loot>&, vector<Hoard_Loot>&, vector<Hoard_Loot>&, vector<Hoard_Loot>&);
-void individual_challange();
-void treasure_hoard_logic(vector<Hoard_Loot>& hoard_loot_4, vector<Hoard_Loot>& hoard_loot_10,vector<Hoard_Loot>& hoard_loot_16, vector<Hoard_Loot>& hoard_loot_17);
-
-
 vector<Hoard_Loot> load_loot_variables(vector<Hoard_Loot>& hoard_loot_4, vector<Hoard_Loot>& hoard_loot_10, vector<Hoard_Loot>& hoard_loot_16, vector<Hoard_Loot>& hoard_loot_17);
+void treasure_hoard_logic(vector<Hoard_Loot>& hoard_loot_4, vector<Hoard_Loot>& hoard_loot_10,vector<Hoard_Loot>& hoard_loot_16, vector<Hoard_Loot>& hoard_loot_17);
+int range_handling(int &raiting, int &d100);
+int hoard_handling(int& raiting, int& d100);
+void magic_table_logic(vector<string> items, int, int, char, int, int, char);
+void gem_table(int, int);
+int money_calc(int raiting);
+void art_table(int value_table, int roll);
 
+
+//individual_challange functions
+void individual_challange();
+void roll_handling(int raiting, int& d100, vector<Dice_Variable>& vec);
 vector<Dice_Variable> load_dice_variables(vector<Dice_Variable>& var_4,vector<Dice_Variable>&   var_10, vector<Dice_Variable>&  var_16, vector<Dice_Variable>&  var_17);
 
 
-void gem_table(int, int);
-void art_table(int value_table, int roll);
-int money_calc(int raiting);
-void magic_table_logic(vector<string> items, int, int, char, int, int, char);
-
-int range_handling(int &raiting, int &d100);
-int hoard_handling(int& raiting, int& d100);
 
 #endif /* function_definitions_hpp */
